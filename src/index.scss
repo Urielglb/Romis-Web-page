@@ -1,0 +1,16 @@
+@import './modules/variables';
+
+@font-face {
+  font-family: 'Nue';
+  src: local('Nue'), url(./assets/fonts/HelveticaNeue.ttf) format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: Nue;
+  color: $fucsia;
+}
+
+code {
+  font-family: Nue;
+}

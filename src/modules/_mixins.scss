@@ -1,0 +1,40 @@
+@mixin text-center {
+    text-align: center;
+}
+
+@mixin full{
+    width: 100%;
+    height: auto;
+}
+
+@mixin center-vertical-horizontal {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+@mixin space-between {
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+}
+
+@mixin padding-top-bottom($top,$bottom){
+    padding-top: $top;
+    padding-bottom: $bottom;
+}
+
+@mixin padding-left-right($left,$right){
+    padding-left: $left;
+    padding-right: $right;
+}
+
+@mixin grid-text {
+    grid-column: 1/13;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+@mixin grid-image {
+    grid-column: 1/13;
+}
