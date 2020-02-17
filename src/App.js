@@ -12,7 +12,7 @@ function Footer(){
       <h2>Contáctanos</h2>
       <div className="contact">
         <p>5539876724 <i className="fab fa-whatsapp"></i></p>
-        <p>auliomex@gmail.com <i className="fas fa-envelope"></i></p>
+        <p>aulio@mail.com <i className="fas fa-envelope"></i></p>
       </div>
     </section>
   );
@@ -79,7 +79,6 @@ function Header(props){
             <span onClick={props.functions[2]}>Cosmetiqueras</span>
             •
             <span onClick={props.functions[3]}>Portabotellas</span>
-            •
           </div>
     </section>
   );
