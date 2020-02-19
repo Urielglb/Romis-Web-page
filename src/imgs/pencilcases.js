@@ -7,7 +7,7 @@ import Pencil6 from '../assets/images/Estuchera6.jpeg';
 import Pencil7 from '../assets/images/Estuchera7.jpeg';
 import Pencil8 from '../assets/images/Estuchera8.jpeg';
 import Pencil9 from '../assets/images/Estuchera9.jpeg';
-import Pencil10 from '../assets/images/Estuchera10.jpeg';
+
 
 let description ="Esta estuchera tiene %c  con una impresión de tipo %i y diseño %d "
 

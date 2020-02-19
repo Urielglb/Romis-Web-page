@@ -72,17 +72,9 @@
 }
 
 
-.display{
-    h1{
-        @include text-center;
-    }
-    
-}
-
 .grid{
     padding-top: 5%;
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
+    @include grid;
     .grid-text{
         z-index: -1;
         transform: translateY(200px);
@@ -101,6 +93,55 @@
     }
 
 }    
+
+.slider{
+    @include grid;
+    margin-bottom: 5%;
+    .text{
+
+        @include grid-text
+    }
+
+    header{
+        background-color: $fucsia;
+        color: white;
+        padding: 10px;
+    }
+    .controls{
+        grid-column: 6/8;
+        display: none;
+        text-align: right;
+        .right-arrow,.left-arrow{
+            cursor: pointer;
+            height: 50px;
+            &:hover{
+                opacity: .2;
+            }
+        }
+    }
+    .img{
+        @include grid-image;
+        img{
+            @include full;
+        }
+    }
+    
+}
+
+#slider-text{
+    @include transition(.6s);
+    &.hide{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+
+#slider-img{
+    @include transition(.6s);
+    &.hide{
+        opacity: 0;
+    }
+}
 
 @keyframes slide-up{
     0%{transform: translateY(200px);}
@@ -179,6 +220,29 @@
            }
         }
     
+    }
+
+    .slider{
+        align-items: center;
+        .text{
+            grid-column: 2/6;
+        }
+        .controls{
+            transform: translate(200px,20px);
+            grid-column: 7/9;
+        }
+        header{
+            transform: translateX(100px);
+            width: 100%;
+        }
+        .img{
+            grid-column: 7/12;
+           img{
+                width: 500px;
+           }
+            display: flex;
+            align-items: center;
+        }
     }
 
     @keyframes slide-left {

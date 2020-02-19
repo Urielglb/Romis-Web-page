@@ -38,3 +38,12 @@
 @mixin grid-image {
     grid-column: 1/13;
 }
+
+@mixin transition($speed) {
+    transition: all $speed ease-out;    
+}
+
+@mixin grid {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
