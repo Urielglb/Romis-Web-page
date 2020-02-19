@@ -5,6 +5,7 @@ import bottleHolders from './imgs/bottleHolders';
 import lunchBoxes from './imgs/lunchboxes';
 import makeupBags from './imgs/makeupBags';
 import pencilCases from './imgs/pencilcases';
+import sets from './imgs/sets';
 
 function Footer(){
   return(
@@ -21,7 +22,6 @@ function Footer(){
 function ImgDisplay(props){
   return(
     <div className="display">
-    <h1>Detalles</h1>
     <div className="grid">
     <div className="grid-text">
     <p>{props.details.description}</p>
@@ -64,6 +64,74 @@ function Gallery(props){
   );
 }
 
+class Slider extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      index : 0
+    };
+  this.next = this.next.bind(this);
+  this.previous = this.previous.bind(this);
+  }
+
+  next(){
+    let sliderTextContent = document.querySelector('#slider-text');
+    let img  = document.querySelector('#slider-img');
+    sliderTextContent.classList.add("hide");
+    img.classList.add("hide");
+    setTimeout(()=>{
+      this.setState((state) => {
+        if (state.index>=sets.length-1) {
+          return{index:0}
+        } else {
+          return{index:state.index+1}
+        }
+      });
+      sliderTextContent.classList.remove("hide");
+      img.classList.remove("hide");
+      },600);
+    
+  }
+
+  previous(){
+    let sliderTextContent = document.querySelector('#slider-text');
+    let img  = document.querySelector('#slider-img');
+    sliderTextContent.classList.add("hide");
+    img.classList.add("hide");
+    setTimeout(()=>{
+      this.setState((state) => {
+        if (state.index<=0) {
+          return{index:sets.length-1}
+        } else {
+          return{index:state.index-1}
+        }
+      });
+      sliderTextContent.classList.remove("hide");
+      img.classList.remove("hide");
+      },600);
+  }
+
+  render(){
+    return(
+      <div className="slider">
+        <div className="controls">
+            <h1 className="left-arrow"><i className="fas fa-arrow-left" onClick={this.previous}></i></h1>
+            <h1 className="right-arrow"><i className="fas fa-arrow-right" onClick={this.next}></i></h1>
+          </div>
+        <div className="text">
+          <header id="slider-subtitle">
+            <p id = "slider-text">{sets[this.state.index].description}</p>
+          </header>
+        </div>
+        <div className="img">
+          <img src={sets[this.state.index].src} id="slider-img"></img>
+        </div>
+      </div>
+    );
+  }
+  
+}
+
 function Header(props){
   return(
     <section className="header">
@@ -88,6 +156,7 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
+      slider:true,
       imgAlone: false,
       details:"",
       imgGallery:[],
@@ -103,13 +172,15 @@ class App extends React.Component{
 
   show(details){
    this.setState({
+     slider:false,
      imgAlone : !this.state.imgAlone,
-     details: details
+     details: details,
    });
   }
 
   bottleHolder(){
     this.setState({
+      slider:false,
       imgAlone:false,
       imgGallery: bottleHolders
     });
@@ -117,6 +188,7 @@ class App extends React.Component{
 
   lunchbox(){
     this.setState({
+      slider:false,
       imgAlone:false,
       imgGallery:lunchBoxes
     });
@@ -124,6 +196,7 @@ class App extends React.Component{
 
   makeupBag(){
     this.setState({
+      slider:false,
       imgAlone:false,
       imgGallery:makeupBags
     });
@@ -131,6 +204,7 @@ class App extends React.Component{
 
   pencilCase(){
     this.setState({
+      slider:false,
       imgAlone:false,
       imgGallery:pencilCases
     });
@@ -138,7 +212,9 @@ class App extends React.Component{
 
   render(){
     let content ;
-    if(this.state.imgAlone){
+    if(this.state.slider){
+      content = <Slider show={this.show}></Slider>
+    }else if(this.state.imgAlone){
       content = <ImgDisplay details={this.state.details} show ={this.show}></ImgDisplay>
     }else{
       content = <Gallery imgsDetails ={this.state.imgGallery} show={this.show}></Gallery>
