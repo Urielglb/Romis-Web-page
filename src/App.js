@@ -74,11 +74,17 @@ class Slider extends React.Component{
   this.previous = this.previous.bind(this);
   }
 
+  componentDidMount(){
+    this.timer = setInterval(this.next,5000);
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.timer);
+  }
+
   next(){
-    let sliderTextContent = document.querySelector('#slider-text');
-    let img  = document.querySelector('#slider-img');
-    sliderTextContent.classList.add("hide");
-    img.classList.add("hide");
+    clearInterval(this.timer);
+    this.addHide()
     setTimeout(()=>{
       this.setState((state) => {
         if (state.index>=sets.length-1) {
@@ -87,17 +93,28 @@ class Slider extends React.Component{
           return{index:state.index+1}
         }
       });
-      sliderTextContent.classList.remove("hide");
-      img.classList.remove("hide");
+      this.removeHide()
       },600);
-    
+    this.timer = setInterval(this.next,5000);
   }
 
-  previous(){
+  addHide(){
     let sliderTextContent = document.querySelector('#slider-text');
     let img  = document.querySelector('#slider-img');
     sliderTextContent.classList.add("hide");
     img.classList.add("hide");
+  }
+
+  removeHide(){
+    let sliderTextContent = document.querySelector('#slider-text');
+    let img  = document.querySelector('#slider-img');
+    sliderTextContent.classList.remove("hide");
+    img.classList.remove("hide");
+  }
+
+  previous(){
+    clearInterval(this.timer);
+    this.addHide()
     setTimeout(()=>{
       this.setState((state) => {
         if (state.index<=0) {
@@ -106,10 +123,12 @@ class Slider extends React.Component{
           return{index:state.index-1}
         }
       });
-      sliderTextContent.classList.remove("hide");
-      img.classList.remove("hide");
+      this.removeHide()
       },600);
+      this.timer = setInterval(this.next,5000);
   }
+
+  
 
   render(){
     return(
