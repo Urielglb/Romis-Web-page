@@ -71,7 +71,6 @@ class Slider extends React.Component{
       index : 0
     };
   this.next = this.next.bind(this);
-  this.previous = this.previous.bind(this);
   }
 
   componentDidMount(){
@@ -112,33 +111,11 @@ class Slider extends React.Component{
     img.classList.remove("hide");
   }
 
-  previous(){
-    clearInterval(this.timer);
-    this.addHide()
-    setTimeout(()=>{
-      this.setState((state) => {
-        if (state.index<=0) {
-          return{index:sets.length-1}
-        } else {
-          return{index:state.index-1}
-        }
-      });
-      this.removeHide()
-      },600);
-      this.timer = setInterval(this.next,5000);
-  }
 
   
 
   render(){
     return(
-      <div>
-        <div className="controls">
-          <span>
-              <i className="fas fa-arrow-left left-arrow" onClick={this.previous}></i>
-              <i className="fas fa-arrow-right right-arrow" onClick={this.next}></i>
-          </span>
-        </div>
         <div className="slider">
         <div className="text">
           <header id="slider-subtitle">
@@ -148,7 +125,6 @@ class Slider extends React.Component{
         <div className="img">
           <img src={sets[this.state.index].src} id="slider-img"></img>
         </div>
-      </div>
       </div>
     );
   }

@@ -17,7 +17,7 @@ const sets = [
     },
     {
         src : Set3,
-        description : description.replace("%i","").replace("%d","puntitos")
+        description : description.replace("%i","vinil").replace("%d","puntitos")
     },
     {
         src : Set4,
@@ -25,7 +25,7 @@ const sets = [
     },
     {
         src : Set5,
-        description : description.replace("%i","sublimado").replace("%d","puntitos")
+        description : description.replace("%i","vinil").replace("%d","puntitos")
     }
 ]
 
