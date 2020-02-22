@@ -94,26 +94,17 @@
 
 }    
 
-.controls{
-    margin-bottom: 4%;
-    text-align: center;
-    span{
-        font-size: 1.5em;
-    }
-}
-
 .slider{
     @include grid;
     margin-bottom: 5%;
     .text{
-
         @include grid-text
     }
 
     header{
         background-color: $fucsia;
         color: white;
-        padding: 10px;
+        padding: 8px;
     }
     .img{
         @include grid-image;
@@ -160,6 +151,9 @@
         .categories{
             font-size: 10px;
         }
+    }
+    .slider{
+        font-size: 10px;
     }
 }
 
@@ -217,28 +211,11 @@
         }
     
     }
-    .controls{
-        margin-bottom: 2%;
-        transform: translateX(250px);
-        span{
-            font-size: 2em;
-        }
-        .right-arrow,.left-arrow{
-            cursor: pointer;
-            height: 50px;
-            &:hover{
-                opacity: .2;
-            }
-        }
-    }
+
     .slider{
         align-items: center;
         .text{
             grid-column: 2/6;
-        }
-        .controls{
-            transform: translate(200px,20px);
-            grid-column: 7/9;
         }
         header{
             transform: translateX(100px);
