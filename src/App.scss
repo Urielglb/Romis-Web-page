@@ -9,8 +9,8 @@
         font-size: 1.5em;
         margin-top: 2%;
     }
-    a{
-        text-decoration: none;
+    span{
+        font-weight: bold;
     }
     .logo{
         @include full;
@@ -94,6 +94,14 @@
 
 }    
 
+.controls{
+    margin-bottom: 4%;
+    text-align: center;
+    span{
+        font-size: 1.5em;
+    }
+}
+
 .slider{
     @include grid;
     margin-bottom: 5%;
@@ -106,18 +114,6 @@
         background-color: $fucsia;
         color: white;
         padding: 10px;
-    }
-    .controls{
-        grid-column: 6/8;
-        display: none;
-        text-align: right;
-        .right-arrow,.left-arrow{
-            cursor: pointer;
-            height: 50px;
-            &:hover{
-                opacity: .2;
-            }
-        }
     }
     .img{
         @include grid-image;
@@ -171,8 +167,8 @@
     .header{
         .logo{
             .logo-image{
-                width: 10%;
-                height: 10%;
+                width: 18%;
+                height: 18%;
             }
         }
     }
@@ -221,7 +217,20 @@
         }
     
     }
-
+    .controls{
+        margin-bottom: 2%;
+        transform: translateX(250px);
+        span{
+            font-size: 2em;
+        }
+        .right-arrow,.left-arrow{
+            cursor: pointer;
+            height: 50px;
+            &:hover{
+                opacity: .2;
+            }
+        }
+    }
     .slider{
         align-items: center;
         .text{

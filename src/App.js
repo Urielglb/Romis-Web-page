@@ -132,11 +132,14 @@ class Slider extends React.Component{
 
   render(){
     return(
-      <div className="slider">
+      <div>
         <div className="controls">
-            <h1 className="left-arrow"><i className="fas fa-arrow-left" onClick={this.previous}></i></h1>
-            <h1 className="right-arrow"><i className="fas fa-arrow-right" onClick={this.next}></i></h1>
-          </div>
+          <span>
+              <i className="fas fa-arrow-left left-arrow" onClick={this.previous}></i>
+              <i className="fas fa-arrow-right right-arrow" onClick={this.next}></i>
+          </span>
+        </div>
+        <div className="slider">
         <div className="text">
           <header id="slider-subtitle">
             <p id = "slider-text">{sets[this.state.index].description}</p>
@@ -145,6 +148,7 @@ class Slider extends React.Component{
         <div className="img">
           <img src={sets[this.state.index].src} id="slider-img"></img>
         </div>
+      </div>
       </div>
     );
   }
