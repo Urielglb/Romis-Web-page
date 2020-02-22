@@ -95,8 +95,10 @@
 }    
 
 .slider{
+    margin-top: 5%;
     @include grid;
     margin-bottom: 5%;
+    font-weight: bold;
     .text{
         @include grid-text
     }
@@ -104,7 +106,7 @@
     header{
         background-color: $fucsia;
         color: white;
-        padding: 8px;
+        padding: 10px;
     }
     .img{
         @include grid-image;
@@ -215,10 +217,10 @@
     .slider{
         align-items: center;
         .text{
-            grid-column: 2/6;
+            margin-right: 15px;
+            grid-column: 2/7;
         }
         header{
-            transform: translateX(100px);
             width: 100%;
         }
         .img{
