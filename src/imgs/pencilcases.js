@@ -13,38 +13,47 @@ let description ="Esta estuchera tiene %c  con una impresión de tipo %i y dise�
 
 const pencilCases = [
     {
+        id:0,
         src:Pencil1,
         description : description.replace("%c","tres cierres").replace("%i","vinil").replace("%d"," soccer")
     },
     {
+        id:1,
         src:Pencil2,
         description : description.replace("%c","tres cierres").replace("%i","vinil").replace("%d"," football")
     },
     {
+        id:2,
         src:Pencil3,
         description : description.replace("%c","tres cierres").replace("%i","vinil").replace("%d"," football").replace("Esta estuchera tiene","Estas estucheras tienen")
     },
     {
+        id:3,
         src:Pencil4,
         description : description.replace("%c","un cierre").replace("%i","vinil").replace("%d"," bbf")
     },
     {
+        id:4,
         src:Pencil5,
         description : description.replace("%c","un cierre").replace("%i","vinil").replace("%d"," bbf").replace("Esta estuchera tiene","Estas estucheras tienen")
     },
     {
+        id:5,
         src:Pencil6,
         description : description.replace("%c","un cierre").replace("%i","vinil").replace("%d"," bbf")
     },
     {
+        id:6,
         src:Pencil7,
         description : "Este conjunto de estucheras son de tres cierres y uno con una impresión vinil y diseño puntos"
     },
     {
+        id:7,
         src:Pencil8,
         description : description.replace("%c","tres cierres").replace("%i","sublimado").replace("%d"," flores")
     },
     {
+        id:8,
         src:Pencil9,
         description : "Este conjunto de estucheras son de tres cierres y uno con una impresión sublimado y diseño flores"
     },

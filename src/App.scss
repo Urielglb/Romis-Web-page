@@ -12,6 +12,10 @@
     span{
         font-weight: bold;
     }
+    a{
+        text-decoration: none;
+        color: $fucsia;
+    }
     .logo{
         @include full;
         @include center-vertical-horizontal;
@@ -108,6 +112,7 @@
         color: white;
         padding: 10px;
     }
+
     .img{
         @include grid-image;
         img{

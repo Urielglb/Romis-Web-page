@@ -8,22 +8,27 @@ let description = "Esta cosmetiquera tiene una impresión de tipo %i y diseño %
 
 const makeupBags = [
     {
+        id:0,
         src:Makeup1,
         description : description.replace("%i","vinil").replace("%d","puntitos")
     },
     {
+        id:1,
         src:Makeup2,
         description : description.replace("%i","sublimado").replace("%d","mariposas")
     },
     {
+        id:2,
         src:Makeup3,
         description : description.replace("%i","sublimado").replace("%d","flores oaxaqueñas").replace("Esta cosmetiquera tiene","Estas cosmetiqueras tienen")
     },
     {
+        id:3,
         src:Makeup4,
         description : description.replace("%i","sublimado").replace("%d","flores oaxaqueñas")
     },
     {
+        id:4,
         src:Makeup5,
         description : description.replace("%i","sublimado").replace("%d","mandalas")
     },
