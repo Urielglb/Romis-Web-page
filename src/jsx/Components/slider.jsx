@@ -42,7 +42,7 @@ const Slider = (props)=>{
           </header>
         </div>
         <div className="img">
-          <img src={props.imgs[actualIndex].src} id="slider-img"></img>
+          <img src={props.imgs[actualIndex].src} id="slider-img" alt="Imágen del catálogo"></img>
         </div>
        </div>
     );

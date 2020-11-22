@@ -1,10 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import logo from '../../assets/images/ROMI.png';
-import bottleHolders from '../../imgs/bottleHolders';
-import lunchBoxes from '../../imgs/lunchboxes';
-import makeupBags from '../../imgs/makeupBags';
-import pencilCases from '../../imgs/pencilcases';
+
 
 const Header = (props)=>{
     return(

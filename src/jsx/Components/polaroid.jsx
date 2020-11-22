@@ -6,7 +6,7 @@ const Polaroid = (props)=>{
     return(
         <div className="polaroid">
           <Link to={link}>
-          <img src={props.details.src}></img>
+          <img src={props.details.src} alt={"Imagen del catálogo"}></img>
           </Link>
         </div>
       );

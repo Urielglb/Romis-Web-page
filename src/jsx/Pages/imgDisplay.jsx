@@ -33,7 +33,10 @@ const getImgInfo = (category,id)=>{
 }
 
 const ImgDisplay = ()=>{
-  const imgInfo = getImgInfo(useParams().category,useParams().id);
+  const category = useParams().category;
+  const id = useParams().id;
+  const imgInfo = getImgInfo(category,id);
+  const link = `/${category}`;
   return(
         <div className="display">
         <div className="grid">
@@ -41,11 +44,11 @@ const ImgDisplay = ()=>{
         <p>{imgInfo.description}</p>
         </div>
         <div className = "grid-img">
-          <img src={imgInfo.src}></img>
+          <img src={imgInfo.src} alt={"Imagen del catálogo"}></img>
         </div>
         </div>
         <div className="btn">
-            <Link to="/home">Volver a galería</Link>
+            <Link to={link}>Volver a galería</Link>
         </div>
       </div>
       );
