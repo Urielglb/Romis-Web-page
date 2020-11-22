@@ -8,7 +8,7 @@ const Header = (props)=>{
         <section className="header">
             <h1><Link to="/home">Accesorios personalizados</Link></h1>
             <div className = "logo">
-            <img src={logo} className= "logo-image"></img>
+            <img src={logo} alt={"Logo de Romi"} className= "logo-image"></img>
             </div>
               <div className="categories" >
                 
